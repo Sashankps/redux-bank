@@ -1,11 +1,9 @@
-import store from "../../store";
-import { createCustomer } from "./customerSlice";
+import { useSelector } from "react-redux";
 
-// store.dispatch(createCustomer('Sashank', '91')); 
-// console.log(store.getState());
-// const name = store.getState().customer.fullName; 
+
 function Customer() {
-  return <h2>👋 Welcome </h2>;
+  const customer = useSelector(store => store.customer.fullName)
+  return <h2>👋 Welcome, {customer} </h2>;
 }
 
 export default Customer;
